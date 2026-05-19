@@ -1,0 +1,171 @@
+.css-variable {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #fafafa;
+  border-left: 3px solid #007bff;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.css-variable:hover {
+  background: #f5f5f5;
+  border-left-color: #0056b3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.css-variable-key {
+  flex: 0 0 auto;
+  min-width: 180px;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+}
+
+.css-variable-key::before {
+  content: '--';
+  color: #6c757d;
+  margin-right: 2px;
+}
+
+.css-variable-value-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.css-variable-color-swatch {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.css-variable-color-swatch:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Size indicator styles */
+.css-variable-size-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.css-variable-size-bar {
+  height: 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+  min-width: 4px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.css-variable-size-indicator:hover .css-variable-size-bar {
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+  transform: scaleY(1.1);
+}
+
+.css-variable-size-label {
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.75rem;
+  color: #495057;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Badge styles for numbers and other types */
+.css-variable-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+
+.css-variable-number-badge {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.css-variable-number-badge:hover {
+  box-shadow: 0 2px 6px rgba(245, 87, 108, 0.3);
+  transform: scale(1.1);
+}
+
+/* Type-specific container styles */
+.css-variable-type-color {
+  /* Color values already styled */
+}
+
+.css-variable-type-size {
+  /* Size values have their own indicator */
+}
+
+.css-variable-type-number {
+  /* Number values have badge */
+}
+
+.css-variable-type-other {
+  /* Other values display as-is */
+}
+
+.css-variable-value {
+  flex: 1;
+  font-family: 'Courier New', Consolas, monospace;
+  font-size: 0.875rem;
+  color: #495057;
+  padding: 0.375rem 0.75rem;
+  background: var(--neutral-0,#fff);
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+}
+
+.css-variable[data-key]::before {
+  content: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .css-variable {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .css-variable-key {
+    min-width: auto;
+  }
+
+  .css-variable-value-container {
+    width: 100%;
+  }
+
+  .css-variable-value {
+    flex: 1;
+  }
+}

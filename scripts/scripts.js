@@ -17,7 +17,7 @@ import {
   toClassName,
   toCamelCase
 } from './aem.js';
-import { picture, source, img } from './dom-helpers.js';
+import { picture, source, img, a } from './dom-helpers.js';
 
 import {
   getLanguage,
@@ -40,6 +40,161 @@ import {
 	runExperimentation,
 	showExperimentationRail,
 } from './experiment-load.js';
+
+/**
+ * Loads and applies theme configuration from spreadsheet
+ * Fetches CSS variables from theme-configuration page and injects as <style> tag
+ * @param {string} themePath - Path to the theme configuration spreadsheet (optional)
+ * @returns {Promise<void>}
+ */
+async function loadThemeConfiguration(themePath) {
+  try {
+    let configPath = themePath;
+    if (!configPath) {
+      const metadataTheme = getMetadata('theme-configuration');
+      if (metadataTheme) {
+        configPath = metadataTheme;
+      } else {
+        const lang = getLanguage();
+        configPath = `/${lang}/theme-configuration`;
+      }
+    }
+    if (!configPath.endsWith('.json')) {
+      configPath = `${configPath}.json`;
+    }
+    const response = await fetch(configPath);
+    if (!response.ok) {
+      // eslint-disable-next-line no-console
+      console.warn(`Theme configuration not found at ${configPath}`);
+      return;
+    }
+    const json = await response.json();
+    if (!json.data || !Array.isArray(json.data)) {
+      // eslint-disable-next-line no-console
+      console.warn('Invalid theme configuration format');
+      return;
+    }
+    const cssVariables = [];
+    json.data.forEach((row) => {
+      const { key, value } = row;
+      if (!key || !value) return;
+      const cssVarName = key.startsWith('--') ? key : `--${key}`;
+      cssVariables.push(`  ${cssVarName}: ${value.trim()};`);
+    });
+    let styleTag = document.getElementById('theme-configuration-styles');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'theme-configuration-styles';
+      document.head.appendChild(styleTag);
+    }
+    styleTag.textContent = `:root {\n${cssVariables.join('\n')}\n}`;
+    // eslint-disable-next-line no-console
+    console.log(`Theme configuration loaded from ${configPath}`, json.data.length, 'variables applied');
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error loading theme configuration:', error);
+  }
+}
+
+/**
+ * Loads theme configuration from a theme-configurator page
+ * Fetches CSS variables and font definitions, applies them to document
+ * Searches hierarchy if no explicit path provided
+ * @param {string} themePagePath - Optional explicit path to theme configurator
+ * @returns {Promise<void>}
+ */
+async function loadThemeFromPage(themePagePath) {
+  try {
+    let url = themePagePath;
+    if (!url) {
+      const currentPath = window.location.pathname;
+      const pathSegments = currentPath.split('/').filter(Boolean);
+      const candidates = pathSegments.map((_, index) => {
+        const path = pathSegments.slice(0, index + 1).join('/');
+        return `/${path}/theme-configurator`;
+      });
+      candidates.reverse();
+      let found = false;
+      // eslint-disable-next-line no-restricted-syntax
+      for (let candidate of candidates) {
+        candidate = candidate.includes('.html') ? candidate.replace('.html', '') : candidate;
+        try {
+          // eslint-disable-next-line no-await-in-loop
+          const testResp = await fetch(`${candidate}.plain.html`);
+          if (testResp.ok) {
+            url = candidate;
+            found = true;
+            // eslint-disable-next-line no-console
+            console.log(`Theme configurator found at: ${candidate}`);
+            break;
+          }
+        } catch (e) {
+          // eslint-disable-next-line no-console
+          console.warn(`Theme configurator not found at ${candidate}`);
+        }
+      }
+      if (!found) {
+        url = '/theme-configurator-root';
+        // eslint-disable-next-line no-console
+        console.log('Using fallback theme configurator: /theme-configurator-root');
+      }
+    }
+    const resp = await fetch(`${url}.plain.html`);
+    if (!resp.ok) {
+      // eslint-disable-next-line no-console
+      console.warn(`Theme configurator not found at ${url}`);
+      return;
+    }
+    const html = await resp.text();
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    const cssVariables = [];
+    doc.querySelectorAll('.css-variable').forEach((varDiv) => {
+      const key = varDiv.querySelector(':scope > div:nth-child(1)')?.textContent?.trim();
+      const value = varDiv.querySelector(':scope > div:nth-child(2)')?.textContent?.trim();
+      if (key && value) {
+        const cssVarName = key.startsWith('--') ? key : `--${key}`;
+        cssVariables.push(`  ${cssVarName}: ${value};`);
+      }
+    });
+    const fontFaces = [];
+    const fontVariables = [];
+    doc.querySelectorAll('.font-properties').forEach((el) => {
+      const fontLink = el.querySelector(':scope > div a');
+      if (!fontLink) return;
+      const fontName = fontLink.textContent?.trim();
+      const fontUrl = fontLink.href?.trim();
+      if (fontName && fontUrl) {
+        fontFaces.push(`@font-face {
+            font-family: '${fontName}';
+            font-display: swap;
+            src: url('${fontUrl}') format('woff');
+          }`);
+        const fontVarName = fontName.toLowerCase().replace(/\s+/g, '-');
+        fontVariables.push(`--${fontVarName}: '${fontName}';`);
+      }
+    });
+    const cssContent = [
+      ...fontFaces,
+      '',
+      ':root {',
+      ...cssVariables,
+      ...fontVariables,
+      '}',
+    ].join('\n');
+    let styleTag = document.getElementById('theme-configuration-styles');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'theme-configuration-styles';
+      document.head.appendChild(styleTag);
+    }
+    styleTag.textContent = cssContent;
+    // eslint-disable-next-line no-console
+    console.log(`Theme loaded from ${url}: ${cssVariables.length} variables, ${fontFaces.length} fonts`);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Error loading theme from page:', error);
+  }
+}
 
 function addPreconnect(origin) {
   try {
@@ -318,6 +473,13 @@ async function renderWBDataLayer() {
  */
 async function loadEager(doc) {
   setPageLanguage();
+
+  // Load theme from page (default-off: only runs if theme-configurator exists)
+  const themeConfigCFPath = getMetadata('theme_cf_reference');
+  if (!themeConfigCFPath) {
+    await loadThemeFromPage();
+  }
+
   await runExperimentation(doc, experimentationConfig);
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts
   try {

@@ -1,0 +1,28 @@
+{
+    "definitions": [
+        {
+            "title": "Container Component",
+            "id": "containercomponent",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/block/v1/block",
+                        "template": {
+                            "name": "Container Component",
+                            "model": "containercomponent",
+                            "filter": "containercomponent"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "containercomponent",
+            "fields": [
+            ]
+        }
+    ],
+    "filters": []
+}

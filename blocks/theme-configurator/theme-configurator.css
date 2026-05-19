@@ -1,0 +1,31 @@
+.theme-configurator {
+  padding: 2rem 0;
+}
+
+.theme-configurator-variables {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styling if needed */
+.theme-configurator h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #007bff;
+}
+
+/* Empty state styling */
+.theme-configurator p {
+  color: #6c757d;
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
