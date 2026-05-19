@@ -15,11 +15,14 @@
       "cards",
       "carousel",
       "columns",
+      "container-component",
       "contentfragment",
+      "css-variable",
       "dm-asset",
       "dm-template",
       "embed-adaptive-form",
       "find-a-doctor",
+      "font-properties",
       "forex",
       "form",
       "fragment",
@@ -31,6 +34,8 @@
       "tabs",
       "teaser",
       "text",
+      "theme-configurator",
+      "theme-preview",
       "title",
       "video"
     ]

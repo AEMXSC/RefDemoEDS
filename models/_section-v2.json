@@ -1,0 +1,960 @@
+{
+    "definitions": [
+        {
+            "title": "Section",
+            "id": "section",
+            "plugins": {
+                "xwalk": {
+                    "page": {
+                        "resourceType": "core/franklin/components/section/v1/section",
+                        "template": {
+                            "name": "Section",
+                            "model": "section",
+                            "style": "default",
+                            "filter": "section"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "models": [
+        {
+            "id": "section",
+            "fields": [
+                {
+                    "component": "text",
+                    "name": "name",
+                    "label": "Section Name",
+                    "description": "The label shown for this section in the Content Tree"
+                },
+                {
+                    "component": "select",
+                    "name": "sectionType",
+                    "label": "Section Type",
+                    "valueType": "string",
+                    "default": "default",
+                    "value": "default",
+                    "options": [
+                        {
+                            "name": "Default",
+                            "value": "default"
+                        },
+                        {
+                            "name": "Header",
+                            "value": "header"
+                        },
+                        {
+                            "name": "Footer",
+                            "value": "footer"
+                        },
+                        {
+                            "name": "Blogs",
+                            "value": "blogs"
+                        },
+                        {
+                            "name": "Products",
+                            "value": "products"
+                        },
+                        {
+                            "name": "Benefits",
+                            "value": "benefits"
+                        },
+                        {
+                            "name": "HitechGallery",
+                            "value": "hitechgallery"
+                        },
+                        {
+                            "name": "HitechArticles",
+                            "value": "hitechArticles"
+                        },
+                        {
+                            "name": "Banner",
+                            "value": "banner"
+                        },
+                        {
+                            "name": "NotificationBanner",
+                            "value": "notificationbanner"
+                        },
+                        {
+                            "name": "Faq",
+                            "value": "faq"
+                        },
+                        {
+                            "name": "TrackRecord",
+                            "value": "trackrecord"
+                        },
+                        {
+                            "name": "TechSepcsFeature",
+                            "value": "techsepcsfeature"
+                        },
+                        {
+                            "name": "Features",
+                            "value": "features"
+                        },
+                        {
+                            "name": "HitechOverview",
+                            "value": "hitechoverview"
+                        },
+                        {
+                            "name": "Compare",
+                            "value": "compare"
+                        },
+                        {
+                            "name": "Services",
+                            "value": "services"
+                        },
+                        {
+                            "name": "HealthcareBlogs",
+                            "value": "healthcareblogs"
+                        }
+                        ,
+                        {
+                            "name": "HealthcareCategories",
+                            "value": "healthcarecategories"
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHealthcareCategories",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "healthcarecategories"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HealthcareCategories",
+                            "children": [
+                                {
+                                    "name": "Healthcare Categories Variant 1",
+                                    "value": "healthcare-categories-variant1"
+                                },
+                                {
+                                    "name": "Healthcare Categories Variant 2",
+                                    "value": "healthcare-categories-variant2"
+                                },
+                                {
+                                    "name": "Healthcare Categories Variant 3",
+                                    "value": "healthcare-categories-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHealthcareBlogs",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "healthcareblogs"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HealthcareBlogs",
+                            "children": [
+                                {
+                                    "name": "Healthcare Blogs Variant 1",
+                                    "value": "healthcare-blogs-variant1"
+                                },
+                                {
+                                    "name": "Healthcare Blogs Variant 2",
+                                    "value": "healthcare-blogs-variant2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleServices",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "services"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Services",
+                            "children": [
+                                {
+                                    "name": "Healthcare Services Variant 1",
+                                    "value": "services-variant1"
+                                },
+                                {
+                                    "name": "Healthcare Services Variant 2",
+                                    "value": "services-variant2"
+                                },
+                                {
+                                    "name": "Healthcare Services Variant3",
+                                    "value": "services-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleCompare",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "compare"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Compare",
+                            "children": [
+                                {
+                                    "name": "Compare Component Variant 1",
+                                    "value": "compare-variant1"
+                                },
+                                {
+                                    "name": "Compare Component Variant 2",
+                                    "value": "compare-variant2"
+                                },
+                                {
+                                    "name": "Compare Component Variant3",
+                                    "value": "compare-variant3"
+                                },
+                                 {
+                                    "name": "Healthcare round tab swiper variant",
+                                    "value": "healthcare-round-tab-swiper"
+                                },
+                                {
+                                    "name": "Healthcare tab swiper variant",
+                                    "value": "healthcare-tab-swiper"
+                                },
+                                {
+                                    "name": "Healthcare tab without swiper variant",
+                                    "value": "healthcare-tab-without-swiper"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleFeatures",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "features"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Features",
+                            "children": [
+                                {
+                                    "name": "Hitech Feature Variant 1",
+                                    "value": "hitech-feature-variant1"
+                                },
+                                {
+                                    "name": "Hitech Feature Variant 2",
+                                    "value": "hitech-feature-variant2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleTechSepcsFeature",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "techsepcsfeature"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "TechSepcsFeature",
+                            "children": [
+                                {
+                                    "name": "tech-specs-features-type-1",
+                                    "value": "tech-specs-features-variant1"
+                                },
+                                {
+                                    "name": "tech-specs-features-type-2",
+                                    "value": "tech-specs-features-variant2"
+                                },
+                                {
+                                    "name": "tech-specs-features-type-3",
+                                    "value": "tech-specs-features-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleTrackRecord",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "trackrecord"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "TrackRecord",
+                            "children": [
+                                {
+                                    "name": "Trackrecord Type 1",
+                                    "value": "track-record-variant1"
+                                },
+                                {
+                                    "name": "Trackrecord Type 2",
+                                    "value": "track-record-variant2"
+                                },
+                                {
+                                    "name": "Trackrecord Type 3",
+                                    "value": "track-record-variant3"
+                                },
+                                {
+                                    "name": "Process Step Type 1",
+                                    "value": "process-step-variant1"
+                                },
+                                {
+                                    "name": "Process Step Type 2",
+                                    "value": "process-step-variant2"
+                                },
+                                {
+                                    "name": "Process Step Type 3",
+                                    "value": "process-step-variant3"
+                                },
+                                {
+                                    "name": "tech-specs-type-1",
+                                    "value": "tech-specs-variant1"
+                                },
+                                {
+                                    "name": "tech-specs-type-2",
+                                    "value": "tech-specs-variant2"
+                                },
+                                {
+                                    "name": "tech-specs-type-3",
+                                    "value": "tech-specs-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHitechOverview",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "hitechoverview"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HitechOverview",
+                            "children": [
+                                {
+                                    "name": "Hi-tech Overview Variant 1",
+                                    "value": "hi-tech-overview-variant1"
+                                },
+                                {
+                                    "name": "Hi-tech Overview Variant 2",
+                                    "value": "hi-tech-overview-variant2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleFaq",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "faq"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Faq",
+                            "children": [
+                                {
+                                    "name": "Accordion Variant 1",
+                                    "value": "accordion-variant1"
+                                },
+                                {
+                                    "name": "Accordion Variant 2",
+                                    "value": "accordion-variant2"
+                                },
+                                {
+                                    "name": "Accordion Variant 3",
+                                    "value": "accordion-variant3"
+                                },
+                                {
+                                    "name": "HitechAccordion Variant 1",
+                                    "value": "hitechaccordion-variant1"
+                                },
+                                {
+                                    "name": "HitechAccordion Variant 2",
+                                    "value": "hitechaccordion-variant2"
+                                },
+                                {
+                                    "name": "HitechAccordion Variant 3",
+                                    "value": "hitechaccordion-variant3"
+                                },
+                                {
+                                    "name": "HitechAccordion tab content",
+                                    "value": "hitechaccordion-tab-content"
+                                },
+                                {
+                                    "name": "Healthcare accordion variant 1",
+                                    "value": "healthcare-accordion-variant1"
+                                },
+                                {
+                                    "name": "Healthcare accordion variant 2",
+                                    "value": "healthcare-accordion-variant2"
+                                },
+                                {
+                                    "name": "Healthcare accordion variant 3",
+                                    "value": "healthcare-accordion-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleNotificationBanner",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "notificationbanner"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "NotificationBanner",
+                            "children": [
+                                {
+                                    "name": "Notification Banner Type 1",
+                                    "value": "notification-banner-variant1"
+                                },
+                                {
+                                    "name": "Notification Banner Type 2",
+                                    "value": "notification-banner-variant2"
+                                },
+                                {
+                                    "name": "Notification Banner Type 3",
+                                    "value": "notification-banner-variant3"
+                                },
+                                {
+                                    "name": "Simple Banners Type 1",
+                                    "value": "simple-banner-variant1"
+                                },
+                                {
+                                    "name": "Simple Banners Type 2",
+                                    "value": "simple-banner-variant2"
+                                },
+                                {
+                                    "name": "Simple Banners Type 3",
+                                    "value": "simple-banner-variant3"
+                                },
+                                {
+                                    "name": "Simple Banners Type 4",
+                                    "value": "simple-banner-variant4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleBanner",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "banner"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Banner",
+                            "children": [
+                                {
+                                    "name": "Content Fragmenet Banner",
+                                    "value": "default"
+                                },
+                                {
+                                    "name": "Bfsi banner variant 1",
+                                    "value": "banner-variant1"
+                                },
+                                {
+                                    "name": "Bfsi banner variant 2",
+                                    "value": "banner-variant2"
+                                },
+                                {
+                                    "name": "Bfsi banner variant 3",
+                                    "value": "banner-variant3"
+                                },
+                                {
+                                    "name": "Bfsi banner variant 4",
+                                    "value": "banner-variant4"
+                                },
+                                {
+                                    "name": "Hitech banner variant 1",
+                                    "value": "hitech-banner-variant1"
+                                },
+                                {
+                                    "name": "Hitech banner variant 2",
+                                    "value": "hitech-banner-variant2"
+                                },
+                                {
+                                    "name": "Hitech banner variant 3",
+                                    "value": "hitech-banner-variant3"
+                                },
+                                {
+                                    "name": "Hitech banner variant 4",
+                                    "value": "hitech-banner-variant4"
+                                },
+                                {
+                                     "name": "Healthcare banner variant new 1",
+                                    "value": "healthcare-banner-variant-new-1"
+                                },
+                                {
+                                    "name": "Healthcare banner variant 1",
+                                    "value": "healthcare-banner-variant1"
+                                },
+                                {
+                                    "name": "Healthcare banner variant 2",
+                                    "value": "healthcare-banner-variant2"
+                                },
+                                {
+                                    "name": "Healthcare banner variant 3",
+                                    "value": "healthcare-banner-variant3"
+                                },
+                                {
+                                    "name": "Healthcare banner variant 4",
+                                    "value": "healthcare-banner-variant4"
+                                },
+                                {
+                                    "name": "Healthcare banner variant 5",
+                                    "value": "healthcare-banner-variant5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHitechArticles",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "hitechArticles"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HitechArticles",
+                            "children": [
+                                {
+                                    "name": "hitech Articles v1",
+                                    "value": "hitech-articles1"
+                                },
+                                {
+                                    "name": "hitech Articles v2",
+                                    "value": "hitech-articles2"
+                                },
+                                {
+                                    "name": "hitech Articles v3",
+                                    "value": "hitech-articles3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHitechGallery",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "hitechgallery"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "HitechGallery",
+                            "children": [
+                                {
+                                    "name": "hitech gallery v1",
+                                    "value": "hitech-variant1"
+                                },
+                                {
+                                    "name": "hitech gallery v2",
+                                    "value": "hitech-variant2"
+                                },
+                                {
+                                    "name": "hitech gallery v3",
+                                    "value": "hitech-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleFooter",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "footer"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Footer",
+                            "children": [
+                                {
+                                    "name": "Footer variant Main",
+                                    "value": "footer-main"
+                                },
+                                {
+                                    "name": "Footer variant Bottom",
+                                    "value": "footer-bottom"
+                                },
+                                {
+                                    "name": "Footer Variant 2",
+                                    "value": "footer-variant2"
+                                },
+                                {
+                                    "name": "Footer Variant 3",
+                                    "value": "footer-variant3"
+                                },
+                                {
+                                    "name": "hitech Footer variant 1",
+                                    "value": "hitech-footerv1"
+                                },
+                                {
+                                    "name": "hitech Footer variant 2",
+                                    "value": "hitech-footerv2"
+                                },
+                                {
+                                    "name": "hitech Footer variant 3",
+                                    "value": "hitech-footerv3"
+                                },
+                                {
+                                    "name": "Healthcare Footer variant 1",
+                                    "value": "healthcare-footerv1"
+                                },
+                                {
+                                    "name": "Healthcare Footer variant 2",
+                                    "value": "healthcare-footerv2"
+                                },
+                                {
+                                    "name": "Healthcare Footer variant 3",
+                                    "value": "healthcare-footerv3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleBenefits",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "benefits"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Benefits",
+                            "children": [
+                                {
+                                    "name": "Benefits Variant 1",
+                                    "value": "benefits-section1"
+                                },
+                                {
+                                    "name": "Benefits Variant 2",
+                                    "value": "benefits-section2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleProducts",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "products"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Products",
+                            "children": [
+                                {
+                                    "name": "Products Default Class",
+                                    "value": "products"
+                                },
+                                {
+                                    "name": "Products v1",
+                                    "value": "product-variant1"
+                                },
+                                {
+                                    "name": "Products v2",
+                                    "value": "product-variant2"
+                                },
+                                {
+                                    "name": "Products v3",
+                                    "value": "product-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleBlogs",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "blogs"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Blogs",
+                            "children": [
+                                {
+                                    "name": "Highlight",
+                                    "value": "highlight"
+                                },
+                                {
+                                    "name": "Blogs v1",
+                                    "value": "blog-cards"
+                                },
+                                {
+                                    "name": "Blogs v2",
+                                    "value": "blog-cards2"
+                                },
+                                {
+                                    "name": "Alphabetical Product Listing",
+                                    "value": "alphabetical-product-listing"
+                                },
+                                {
+                                    "name": "Alphabetical Product Listing Variant 2",
+                                    "value": "alphabetical-product-listing-variant-2"
+                                }
+
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleDefault",
+                    "label": "Style",
+                    "valueType": "string[]",
+                    "default": ["default"],
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "default"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Default",
+                            "children": [
+                                {
+                                    "name": "Highlight",
+                                    "value": "highlight"
+                                },
+                                {
+                                    "name": "Blogs v1",
+                                    "value": "blog-cards"
+                                },
+                                {
+                                    "name": "Blogs v2",
+                                    "value": "blog-cards2"
+                                },
+                                {
+                                    "name": "Products Default",
+                                    "value": "products"
+                                },
+                                {
+                                    "name": "Products v1",
+                                    "value": "product-variant1"
+                                },
+                                {
+                                    "name": "Products v2",
+                                    "value": "product-variant2"
+                                },
+                                {
+                                    "name": "Products v3",
+                                    "value": "product-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "component": "multiselect",
+                    "name": "styleHeader",
+                    "label": "Header Style",
+                    "valueType": "string[]",
+                    "condition": {
+                        "===": [
+                            {
+                                "var": "sectionType"
+                            },
+                            "header"
+                        ]
+                    },
+                    "options": [
+                        {
+                            "name": "Header",
+                            "children": [
+                                {
+                                    "name": "Header Top",
+                                    "value": "header-top"
+                                },
+                                {
+                                    "name": "Header Menu",
+                                    "value": "header-menu"
+                                },
+                                {
+                                    "name": "Header Menu Body",
+                                    "value": "header-menu-body"
+                                },
+                                {
+                                    "name": "Header Variant 1",
+                                    "value": "header-variant1"
+                                },
+                                {
+                                    "name": "Header Variant 2",
+                                    "value": "header-variant2"
+                                },
+                                {
+                                    "name": "Header Variant 3",
+                                    "value": "header-variant3"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "filters": [
+        {
+            "id": "section",
+            "components": [
+                "button",
+                "cards",
+                "carousel",
+                "columns",
+                "contentfragment",
+                "css-variable",
+                "dm-asset",
+                "dm-template",
+                "fragment",
+                "hero",
+                "iframe",
+                "image",
+                "search",
+                "teaser",
+                "text",
+                "theme-configurator",
+                "theme-preview",
+                "title",
+                "video",
+                "trackrecord",
+                "accordion",
+                "tabs",
+                "font-properties"
+            ]
+        }
+    ]
+}
