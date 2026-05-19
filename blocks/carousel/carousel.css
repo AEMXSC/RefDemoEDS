@@ -431,25 +431,7 @@
   .carousel-container .carousel-wrapper .carousel {
     padding: 0 5%;
   }
-    
-  /* Keep UL in slider layout */
-  .carousel-container .carousel-wrapper .carousel > ul {
-    display: flex !important;
-    flex-direction: row;
-    overflow: hidden; /* hide other slides */
-    scroll-snap-type: x mandatory;
-    transition: transform 0.3s ease-in-out;
-  }
 
-  .carousel-container .carousel-wrapper .carousel > ul > li {
-    flex: 0 0 100%; /* each slide takes full width */
-    max-width: 100%;
-    margin: 0;
-    scroll-snap-align: start;
-  }
-    
- 
- /*
   .carousel-container .carousel-wrapper .carousel > ul {
     display: block;
   }
@@ -457,7 +439,6 @@
     width: 100%;
     margin: 15px 0;
   }
- */
 
 
   .carousel-container .carousel-wrapper .carousel .cards-card-body h1, 
@@ -481,3 +462,11 @@
   }
 
 }
+
+
+
+
+
+
+
+

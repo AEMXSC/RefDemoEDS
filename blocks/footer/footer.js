@@ -15,12 +15,12 @@ export default async function decorate(block) {
   const langCode = getLanguage();
   const siteName = await getSiteName();
   const isAuthor = isAuthorEnvironment();
-  let footerPath =`/${langCode}/footer`;
+  let footerPath = `/${langCode}/footer`;
 
-  if(isAuthor){
+  if (isAuthor) {
     footerPath = footerMeta
-    ? new URL(footerMeta, window.location).pathname
-    : `/content/${siteName}${PATH_PREFIX}/${langCode}/footer`;
+      ? new URL(footerMeta, window.location).pathname
+      : `/content/${siteName}${PATH_PREFIX}/${langCode}/footer`;
   }
 
   /*
@@ -34,8 +34,67 @@ export default async function decorate(block) {
   const footerPath = parentPath=='/' ? footerMeta ? new URL(footerMeta, window.location).pathname : '/footer' : footerMeta ? new URL(footerMeta, window.location).pathname : parentPath+'/footer';
   //console.log("footerPath footer: ", footerPath);
   */
-  
-  const fragment = await loadFragment(footerPath);
+
+  /**
+   * Try to load footer in hierarchical order
+   * Example: /us/new-bfsi/page -> tries /us/new-bfsi/footer then /us/footer
+   */
+  async function loadFooterHierarchically(footer = "") {
+    const pathSegments = footer !== "" ? footer.split('/').filter(Boolean) : window.location.pathname.split('/').filter(Boolean);
+
+    // Build paths to try in order (most specific to least specific)
+    const pathsToTry = [];
+
+    if(footer === ''){
+      if (!isAuthor) {
+        // For published site: try current path hierarchy
+        // eslint-disable-next-line no-plusplus
+        for (let i = pathSegments.length; i > 0; i--) {
+          const pathPrefix = pathSegments.slice(0, i).join("/");
+          pathsToTry.push(`/${pathPrefix}/footer`);
+        }
+      } else {
+        // For author environment: use content path structure
+        if (footerMeta) {
+          pathsToTry.push(new URL(footerMeta, window.location).pathname);
+        } else {
+          // Build hierarchy with /content/{siteName} prefix
+          for (let i = pathSegments.length; i > 0; i--) {
+            const pathPrefix = pathSegments.slice(0, i).join('/');
+            pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${pathPrefix}/footer`);
+          }
+          // Fallback to base language footer
+          pathsToTry.push(`/content/${siteName}${PATH_PREFIX}/${langCode}/footer`);
+        }
+      }
+    }else{
+      pathsToTry.push(footer);
+    }
+    
+
+    // Remove duplicates while preserving order
+    const uniquePaths = [...new Set(pathsToTry)];
+
+    console.log("Trying to load footer from paths:", uniquePaths);
+
+    // Try each path until one succeeds
+    for (const path of uniquePaths) {
+      try {
+        const fragment = await loadFragment(path);
+        if (fragment && fragment.firstElementChild) {
+          console.log("Successfully loaded footer from:", path);
+          return fragment;
+        }
+      } catch (error) {
+        console.log(`Footer not found at ${path}, trying next...`);
+      }
+    }
+
+    // If nothing worked, return null
+    console.warn("No footer found in hierarchy");
+    return null;
+  }
+  const fragment = await loadFooterHierarchically();
 
   // decorate footer DOM
   block.textContent = '';
@@ -43,4 +102,24 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
+  console.log(block);
+  const selectVariant = block.querySelector('.section').classList;
+
+  if (window.innerWidth > 992) {
+      block.querySelectorAll('.accordion-item').forEach((ele) => {
+        ele.open = true;
+      });
+    }
+
+  if (selectVariant.contains('footer-variant3')) {
+           block.querySelectorAll('.accordion-item').forEach((ele) => {
+        ele.open = true;
+      });
+  }
+
+  if (selectVariant.contains('healthcare-footerv3')) {
+     block.querySelectorAll('.accordion-item').forEach((ele) => {
+        ele.open = true;
+      });
+  }
 }

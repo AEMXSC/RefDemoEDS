@@ -21,6 +21,9 @@
 }
 */
 
+p{
+  background-color: var(--primery-color);
+}
 :root {
   /* colors */
   --background-color: var(--brand-background-color, #ffffff);
@@ -97,6 +100,22 @@
 
   /* nav height */
   --nav-height: 64px;
+}
+
+/* Custom CSS */
+:root {
+  --Silver: #D8D8D6;
+  --Charcoal: #1B1B1E;
+  --Gold: #D79F4B;
+  --Warm-White: #FEFEFD;
+  --Deep-Blue: #1F4DA8;
+  --DM-Sans: 'DM Sans', sans-serif;
+  --Inter: 'Inter', sans-serif;
+  --Space-Grotesk: 'Space Grotesk', sans-serif;
+  --Manrope: 'Manrope ', sans-serif;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --letter-spacing: 0;
 }
 
 /* fallback fonts */
@@ -345,10 +364,10 @@ body.green-theme {
   --nav-text-color:#000000;
 }
 /*brand header footer brand themes*/
-body header .nav-wrapper{
+/* body header .nav-wrapper{
   background-color: var(--nav-background-color);
   color: var(--nav-text-color);
-}
+} */
 body footer {
   background-color: var(--footer-background-color);
   color: var(--footer-text-color);
@@ -454,8 +473,9 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  /* margin-top: 0.8em;
+  margin-bottom: 0.25em; */
+  margin: 0;
 }
 
 code,
@@ -484,7 +504,7 @@ button {
 
 /* links */
 /* buttons */
-a, a:any-link, a.button:any-link,
+/* a, a:any-link, a.button:any-link,
 button {
   display: inline-block;
   padding: 0;
@@ -504,8 +524,8 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
   text-decoration: none;
-}
-a::after, a.button::after {
+} */
+/* a::after, a.button::after {
   font-family: 'Font Awesome 5 Solid';
   content: "\f105";
   color: var(--link-color);
@@ -520,21 +540,21 @@ a::after, a.button::after {
   border-radius: 0;
   padding: 1px 10px;
   cursor: pointer;
-}
-a:hover,
+} */
+/* a:hover,
 a:focus,
 a.button:hover,
 a.button:focus {
   color: var(--link-hover-color);
   text-decoration: underline;
   cursor: pointer;
-}
-a:hover::after,
+} */
+/* a:hover::after,
 a:focus::after,
 a.button:hover::after,
 a.button:focus::after {
   color: var(--link-hover-color);
-}
+} */
 
 button:disabled,
 button:disabled:hover {
@@ -643,14 +663,14 @@ main .cards-container {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin-top: 120px ;
   min-height: 50px;
 }
 
 main > .section > div {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 88px;
 }
 
 main > .section:first-of-type {
@@ -660,6 +680,15 @@ main > .section:first-of-type {
 @media (width >= 900px) {
   main > .section > div {
     padding: 0 32px;
+  }
+}
+@media (max-width: 768px){
+  main > .section > div {
+    padding: 0 24px;
+  }
+  main > .section {
+    margin: 0;
+    margin-top: 48px ;
   }
 }
 
@@ -829,7 +858,7 @@ main .section.bg-image > .default-content-wrapper {
 } */
 
 .adobe-ue-edit header, .adobe-ue-preview header {
-  background: #000;
+  background: var(--color-black, #000000);
 }
 
 /* Section background image (data-image) */

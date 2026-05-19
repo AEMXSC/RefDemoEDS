@@ -18,16 +18,11 @@ window.targetGlobalSettings = {
 
 function loadAT() {
   function targetPageParams() {
-    return {
-      "at_property": "549d426b-0bcc-be60-ce27-b9923bfcad4f"
-    };
+    return { "at_property": "549d426b-0bcc-be60-ce27-b9923bfcad4f"};
   }
-    loadScript(window.hlx.codeBasePath+'/scripts/at-lsig.js');
-  
+  loadScript(window.hlx.codeBasePath + '/scripts/at-lsig.js');
 }
 // Adobe Target - end
-
-
 
 // refactor tweetable links function
 /**
@@ -35,8 +30,8 @@ function loadAT() {
  */
 function openPopUp(popUrl) {
   const popupParams = `height=450, width=550, top=${(window.innerHeight / 2 - 275)}`
-   + `, left=${(window.innerWidth / 2 - 225)}`
-   + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
+    + `, left=${(window.innerWidth / 2 - 225)}`
+    + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0';
   window.open(popUrl, 'fbShareWindow', popupParams);
 }
 
@@ -51,7 +46,7 @@ function embedCustomLibraries() {
     //console.log(`Loading script ${index + 1}: ${url}`);
     loadScript(`${url}`);
   });
-  
+
 }
 
 /**
@@ -100,7 +95,6 @@ function buildTwitterLinks() {
 }
 
 if (!window.location.hostname.includes('localhost')) {
-  
   embedCustomLibraries();
   if (window.parent && !(window.parent.location.pathname.indexOf('/canvas/') > -1)) {
     loadAT();

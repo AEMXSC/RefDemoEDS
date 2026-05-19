@@ -1,0 +1,26 @@
+{
+  "definitions": [
+    {
+      "title": "Product Index",
+      "id": "product-index",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Product Index",
+              "model": "product-index"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "product-index",
+      "fields": [
+      ]
+    }
+  ]
+}

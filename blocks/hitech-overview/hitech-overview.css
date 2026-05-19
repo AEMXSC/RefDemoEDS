@@ -1,0 +1,176 @@
+/* hi texh overview variant 1 */
+.hi-tech-overview-variant1,
+.hi-tech-overview-variant2 {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    background: var(--color-soft-white, #fafafa);
+}
+
+.hi-tech-overview-variant1 {
+    padding: 120px 88px;
+    overflow: hidden;
+}
+
+.hi-tech-overview-variant1 img,
+.hi-tech-overview-variant2 img {
+    width: 100%;
+    height: 571px;
+}
+
+.hi-tech-overview-variant1 h3,
+.hi-tech-overview-variant2 h3 {
+    color: var(--Lunar-Gray, #E6E8F1);
+    font-family: var(--Inter, sans-serif);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    margin: 0px;
+    width: 43.5%;
+}
+
+.hi-tech-overview-variant1 .align-left h3,
+.hi-tech-overview-variant2 .align-left h3 {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+}
+
+.hi-tech-overview-variant1 .align-right h3,
+.hi-tech-overview-variant2 .align-right h3 {
+    position: absolute;
+    top: 50px;
+    right: 34px;
+}
+
+.hi-tech-overview-variant1 .swiper-horizontal>.swiper-pagination-bullets {
+    text-align: center;
+}
+
+.hi-tech-overview-variant1 .swiper-pagination-bullet {
+    background: var(--silver, #D8D8D6);
+    width: 8px;
+    height: 8px;
+    margin: 0px !important;
+    opacity: 1;
+    margin-right: 8px !important;
+}
+
+.hi-tech-overview-variant1 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    border-radius: 6px;
+    background: var(--cosmic-black,#05060D);
+    height: 8px;
+    width: 36px;
+}
+
+.hi-tech-overview-variant1 .swiper {
+    overflow: unset;
+}
+
+/* hi texh overview variant 2 */
+
+.hi-tech-overview-variant2 {
+    padding: 40px 143px;
+}
+
+.section.hi-tech-overview-variant2 .swiper {
+    padding: 0;
+    height: 750px;
+    overflow: hidden !important;
+}
+
+.hi-tech-overview-variant2 .swiper-pagination-vertical.swiper-pagination-bullets,
+.swiper-vertical>.swiper-pagination-bullets {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+}
+
+.hi-tech-overview-variant2 .swiper-horizontal>.swiper-pagination-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hi-tech-overview-variant2 .swiper-pagination-bullet {
+    background: var(--silver, #D8D8D6);
+    width: 8px;
+    height: 8px;
+    margin: 0px !important;
+    opacity: 1;
+    margin-bottom: 8px !important;
+}
+
+.hi-tech-overview-variant2 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    border-radius: 6px;
+    background: var(--tech-glow, #48E4C4);
+    width: 8px;
+    height: 36px;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .section.hi-tech-overview-variant1,
+    .section.hi-tech-overview-variant2 {
+        padding: 40px 24px;
+        margin: 0px;
+    }
+
+    .hi-tech-overview-variant1 img,
+    .hi-tech-overview-variant2 img {
+        width: 100%;
+        height: 317px;
+    }
+
+    .hi-tech-overview-variant1 .align-left h3 {
+        font-size: 16px;
+        line-height: 20px;
+        top: 28px;
+        left: 30px;
+    }
+
+    .hi-tech-overview-variant1 h3,
+    .hi-tech-overview-variant2 h3 {
+        width: 70%;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .hi-tech-overview-variant1 .align-left h3,
+    .hi-tech-overview-variant2 .align-left h3 {
+        left: 24px;
+    }
+
+    .hi-tech-overview-variant1 .align-right h3,
+    .hi-tech-overview-variant2 .align-right h3 {
+        top: 18px;
+        right: 12px;
+    }
+
+    .section.hi-tech-overview-variant2 .swiper {
+        height: 498px;
+    }
+
+    .section.hi-tech-overview-variant1 .swiper,
+    .section.hi-tech-overview-variant2 .swiper {
+        padding: 0;
+    }
+
+    .section.hi-tech-overview-variant2 .swiper-slide {
+        flex-shrink: unset;
+        margin: 0px !important;
+    }
+
+    .hi-tech-overview-variant2 .swiper-pagination-vertical.swiper-pagination-bullets,
+    .swiper-vertical>.swiper-pagination-bullets {
+        top: 37%;
+    }
+     .hi-tech-overview-variant2 h3 {
+   width: 59%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hi-tech-overview-variant2 h3 {
+    width: 30%;
+  }
+}

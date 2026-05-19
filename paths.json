@@ -1,22 +1,14 @@
 {
   "mappings": [
-    "/content/wknd-universal/language-masters/en:/",
-    "/content/wknd-universal/language-masters/en/:/en/",
-    "/content/wknd-universal/language-masters/fr/:/fr/",
-    "/content/wknd-universal/language-masters/fr:/fr",
-    "/content/wknd-universal/language-masters/es/:/es/",
-    "/content/wknd-universal/language-masters/es:/es",
-    "/content/wknd-universal/language-masters/ja/:/ja/",
-    "/content/wknd-universal/language-masters/ja:/ja",
-    "/content/wknd-universal/language-masters/de/:/de/",
-    "/content/wknd-universal/language-masters/de:/de",
-    "/content/wknd-universal/configuration:/.helix/config.json",
-    "/content/wknd-universal/metadata:/metadata.json",
-    "/content/wknd-universal/redirects:/redirects.json",
-    "/content/wknd-universal/placeholders:/placeholders.json"
+    "/content/crossindustrydemo-bfsi/language-masters/en:/",
+    "/content/crossindustrydemo-bfsi/language-masters/en/:/en/",
+    "/content/crossindustrydemo-bfsi/configuration:/.helix/config.json",
+    "/content/crossindustrydemo-bfsi/metadata:/metadata.json",
+    "/content/crossindustrydemo-bfsi/redirects:/redirects.json",
+    "/content/crossindustrydemo-bfsi/placeholders:/placeholders.json"
   ],
   "includes": [
-    "/content/wknd-universal/",
-    "/content/dam/wknd-universal/"
+    "/content/crossindustrydemo-bfsi/",
+    "/content/dam/crossindustrydemo-bfsi/"
   ]
 }

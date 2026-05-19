@@ -1,3 +1,6 @@
+# Set default line ending behavior to LF (EDS standard)
+* text=auto eol=lf
+
 # Environment-specific files
 fstab.yaml merge=ours
 README.md merge=ours

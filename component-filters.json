@@ -8,47 +8,42 @@
   {
     "id": "section",
     "components": [
-      "accordion",
-      "action-button",
       "button",
       "cards",
       "carousel",
       "columns",
       "contentfragment",
+      "css-variable",
+      "dm-asset",
       "dm-template",
-      "dynamic-media-image",
-      "dynamic-media-video",
       "fragment",
       "hero",
+      "iframe",
       "image",
-      "quote",
+      "search",
       "teaser",
       "text",
+      "theme-configurator",
+      "theme-preview",
       "title",
       "video",
-      "search",
-      "separator",
+      "trackrecord",
+      "accordion",
       "tabs",
-      "form",
-      "forex",
-      "embed-adaptive-form",
-      "find-a-doctor"
-    ]
-  },
-  {
-    "id": "accordion",
-    "components": [
-      "accordion-item"
+      "css-variable",
+      "font-properties",
+      "promotionalbanner",
+      "benefitssection",
+      "blogs",
+      "font-properties",
+      "techspecsfeatures",
+      "product-index",
+      "hitechoverview",
+      "product-compare-cards"
     ]
   },
   {
     "id": "cards",
-    "components": [
-      "card"
-    ]
-  },
-  {
-    "id": "carousel",
     "components": [
       "card"
     ]
@@ -63,47 +58,12 @@
     "id": "column",
     "components": [
       "button",
+      "dm-asset",
+      "dm-template",
       "image",
-      "text",      
+      "text",
       "title",
-      "video",
-      "dynamic-media-video"
-    ]
-  },
-  {
-    "id": "tabs",
-    "components": [
-      "tabs-item"
-    ]
-  },
-  {
-    "id": "form",
-    "components": [
-      "captcha",
-      "checkbox",
-      "checkbox-group",
-      "date-input",
-      "drop-down",
-      "email",
-      "file-input",
-      "form-accordion",
-      "form-button",
-      "form-fragment",
-      "form-image",
-      "form-modal",
-      "form-reset-button",
-      "form-submit-button",
-      "number-input",
-      "panel",
-      "password",
-      "plain-text",
-      "radio-group",
-      "rating",
-      "telephone-input",
-      "text-input",
-      "tnc",
-      "wizard",
-      "range"
+      "video"
     ]
   }
 ]

@@ -63,7 +63,7 @@ import { isAuthorEnvironment } from './scripts.js';
  * @description Extracts the site name from paths following the pattern /content/site-name/...
  * For example:
  * - From "/content/wknd-universal/language-masters/en/path" returns "wknd-universal"
- * - From "/content/wknd-universal/language-masters/en/path/to/content.html" returns "wknd-universal"
+ * -From "/content/wknd-universal/language-masters/en/path/to/content.html" returns "wknd-universal"
  * @returns {string} The site name extracted from the path, or empty string if not found
  */
 export async function getHostname() {

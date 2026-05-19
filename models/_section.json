@@ -176,7 +176,15 @@
       	"title",
       	"video",
         "form",
-        "embed-adaptive-form"
+        "embed-adaptive-form",
+        "trackrecord",
+        "banner",
+        "accordion",
+        "tabs",
+        "font-properties",
+        "techspecsfeatures",
+        "product-index",
+        "hitechoverview"
       ]
     }
   ]

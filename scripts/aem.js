@@ -509,9 +509,10 @@ function decorateSections(main) {
     const sectionMeta = section.querySelector('div.section-metadata');
     if (sectionMeta) {
       const meta = readBlockConfig(sectionMeta);
+      const { sectiontype } = meta;
       Object.keys(meta).forEach((key) => {
-        if (key === 'style') {
-          const styles = meta.style
+        if (key === 'style' || (sectiontype !== undefined && key.toLocaleLowerCase() === ('style').concat(sectiontype.toLocaleLowerCase()))) {
+          const styles = meta[key]
             .split(',')
             .filter((style) => style)
             .map((style) => toClassName(style.trim()));
@@ -561,7 +562,6 @@ async function fetchPlaceholders(prefix = 'default') {
   }
   return window.placeholders[`${prefix}`];
 }
-
 
 /*
 // eslint-disable-next-line import/prefer-default-export

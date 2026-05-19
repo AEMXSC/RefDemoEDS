@@ -1,0 +1,58 @@
+{
+  "definitions": [
+    {
+      "title": "hitech-overview",
+      "id": "hitechoverview",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "hitech-overview",
+              "filter": "hitechoverview",
+              "model": "hitechoverview"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hitechoverview",
+      "fields": [
+        {
+          "component": "select",
+          "name": "classes",
+          "label": "Title Alignment",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "align-left"
+            },
+            {
+              "name": "Right",
+              "value": "align-right"
+            }
+          ]
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Overview Image",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Overview Description",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

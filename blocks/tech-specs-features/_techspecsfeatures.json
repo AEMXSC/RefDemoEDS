@@ -1,0 +1,48 @@
+{
+  "definitions": [
+    {
+      "title": "Tech Specs Features",
+      "id": "techspecsfeatures",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Tech Specs Features",
+              "model": "techspecsfeatures",
+              "filter": "techspecsfeatures"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Tech Specs Features Item",
+      "id": "techspecsfeatures-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Tech Specs Features Item",
+              "model": "techspecsfeatures-item"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "techspecsfeatures",
+      "fields": [
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "techspecsfeatures",
+      "components": ["techspecsfeatures-item"]
+    }
+  ]
+}

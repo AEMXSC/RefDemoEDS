@@ -1,12 +1,10 @@
 footer {
-  background-color: var(--dark-color);
   font-size: var(--body-font-size-xs);
   font-family: var(--light-font-family);
-  background-color: var(--dark-color-opacity);
-  background-color: #000;
+  background-color: var(--color-black, #000000);
   width: 100%;
   z-index: 2;
-  color: #ffffff;
+  color: #fff;
 }
 
 footer .footer > div {
@@ -26,7 +24,7 @@ footer .footer img {
 }
 
 footer .footer a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -37,5 +35,853 @@ footer .footer a:hover {
 @media (width >= 900px) {
   footer .footer > div {
     padding: 50px 32px;
+  }
+}
+
+
+
+.footer-wrapper {
+  background: var(--accent-color, #E2F1FB) !important;
+  color: var(--charcoal, #1B1B1E) !important;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+
+    /* max-width: 1440px;
+    margin: 0 auto !important; */
+    /* background: var(--light-blue, #E2F1FB); */
+    /* padding: 100px 88px 30px; */
+    gap: 110px;
+}
+
+.footer-wrapper .footer  > div{
+  max-width: 1440px;
+  margin: 0 auto;
+ padding: 100px 88px 30px;
+ display: flex;
+     flex-direction: column;
+    gap: 100px;
+}
+
+.footer-main .default-content-wrapper {
+  display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 24px;
+    width: 31.1%;
+}
+
+.footer-main .default-content-wrapper p {
+  margin: 0;
+  color: var(--charcoal, #1B1B1E);
+font-family: var(--Inter, sans-serif);
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+}
+
+.footer-main .default-content-wrapper p:first-child {
+  display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--charcoal, #1B1B1E);
+font-family: var(--dm-sans, sans-serif);
+font-size: 24px;
+font-weight: 500;
+line-height: 34px;
+}
+
+.footer-main .default-content-wrapper ul{
+    display: flex;
+    align-items: center ;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 12px;
+}
+
+.footer-main .default-content-wrapper ul li a::after {
+  display: none;
+}
+
+.footer-main .accordion-wrapper {
+    margin: 0;
+    padding: 0;
+
+    /* width: 52.45%; */
+    width: 69.45%;
+}
+
+.footer-main .accordion-wrapper .accordion{
+  display: flex;
+  justify-content: space-between;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.footer-main .accordion-wrapper .accordion details {
+  border: none;
+  margin-top: 0;
+}
+
+.footer-main .accordion-wrapper .accordion details summary {
+padding: 0;
+margin-bottom: 16px;
+pointer-events: none;
+}
+
+.footer-main .accordion-wrapper .accordion details summary p{
+color: var(--charcoal, #1B1B1E);
+font-family: var(--Inter, sans-serif);
+font-size: 14px;
+font-weight: 600;
+line-height: 20px;
+opacity: 0.7;
+}
+
+.footer-main .accordion details summary::after {
+  display: none;
+}
+
+.footer-main .accordion details summary:focus,
+.footer-main .accordion details summary:hover {
+  background: transparent;
+}
+
+.footer-main .accordion details[open] summary {
+  background: transparent;
+}
+
+.footer-main .accordion details[open] .accordion-item-body {
+      border-top: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.footer-main .accordion details .accordion-item-body ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+      display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-main .accordion-wrapper .accordion a{
+  opacity: 0.7;
+}
+
+.footer ul li a{
+  text-decoration: none;
+  color: var(--charcoal, #1B1B1E);
+font-family: var(--Inter, sans-serif);
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+position: relative;
+}
+
+.footer .footer-bottom ul li a::before {
+    content: "";
+    color: var(--charcoal, #1B1B1E);
+    font-family: var(--Inter, sans-serif);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    border: 0.2px solid var(--charcoal, #1B1B1E);
+    margin: 0 8px;
+}
+
+ .footer .footer-bottom.footer-variant2 ul li a::before,
+ .footer .footer-bottom.footer-variant3 ul li a::before {
+  display: none;
+ }
+
+.footer .footer-bottom ul li:first-child a::before {
+  display: none;
+}
+
+.footer ul li a:hover {
+  color: var(--charcoal, #1B1B1E);
+}
+
+.footer ul li a::after {
+display: none;
+}
+
+.footer .footer-bottom {
+    border-top: 0.5px solid var(--color-neutral-350, #B2B3B5);
+    padding-top: 30px;
+}
+
+.footer-bottom .default-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom .default-content-wrapper ul{
+    display: flex;
+    align-items: center;
+
+    /* gap: 21px; */
+    list-style: none;
+    margin: 0;
+}
+
+.footer-bottom.footer-variant2 .default-content-wrapper ul,
+.footer-bottom.footer-variant3 .default-content-wrapper ul {
+gap: 21px;
+}
+
+/* .footer-bottom .default-content-wrapper ul:last-child {
+  display: none;
+} */
+.footer-bottom .default-content-wrapper p {
+color: var(--charcoal, #1B1B1E);
+font-family: var(--Inter, sans-serif);
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+opacity: 0.7;
+}
+
+.footer-bottom a {
+  opacity: 0.7;
+}
+
+.footer-bottom.footer-variant2 a {
+  opacity: 1;
+}
+
+/* footer variant 2 */
+
+/* .footer-main.footer-variant2 .default-content-wrapper ul{
+display: none;
+}
+.footer-bottom.footer-variant2 .default-content-wrapper ul:first-child {
+  display: none;
+}
+.footer-bottom.footer-variant2 .default-content-wrapper ul:last-child {
+  display: block;
+} */
+
+
+/* footer variant 3  */
+
+.footer-main.footer-variant3 .accordion-wrapper {
+width: 100%;
+}
+
+.footer-main.footer-variant3 .accordion-wrapper .accordion sub{
+       border-radius: 29px;
+    border: 1px solid var(--primary,#1F4DA8);
+    padding: 4px 8px;
+    color: var(--primary,#1F4DA8);
+    font-family: var(--dm-sans, sans-serif);
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 10px;
+
+    /* width: 35px; */
+    height: 17px;
+}
+
+.footer-main.footer-variant3 .accordion details .accordion-item-body ul li{
+display: flex;
+gap: 8px;
+}
+
+.footer-bottom.footer-variant3 .default-content-wrapper p {
+display: flex;
+align-items: center;
+opacity: 1;
+gap: 8px
+;
+}
+
+ .footer-bottom.footer-variant3 .default-content-wrapper p:nth-child(2) {
+      opacity: 0.7;
+ }
+
+ .footer-bottom.footer-variant3 .default-content-wrapper ul li a {
+      opacity: 1;
+ }
+
+ .footer-bottom.footer-variant3 .default-content-wrapper ul li img {
+  margin: 0;
+ }
+
+@media screen and (width <= 992px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-wrapper .footer > div  {
+    padding: 40px 24px 44px;
+    gap: 40px;
+  }
+
+  .footer-main .default-content-wrapper {
+    width: 100%;
+  }
+
+  .footer-main .accordion-wrapper {
+    width: 100%;
+  }
+
+  .footer-main .accordion-wrapper .accordion details {
+    border-bottom: 0.5px solid var(--color-neutral-350, #B2B3B5);
+
+            /* padding-bottom: 24px; */
+  }
+
+  .footer-main .accordion-wrapper .accordion details summary {
+    pointer-events: auto;
+            padding: 24px 0;
+        margin-bottom: 0;
+  }
+
+  .footer-main .accordion details[open] .accordion-item-body {
+    padding-bottom: 24px;
+  }
+
+  .footer-main .accordion details summary::after {
+    right: 10px;
+    display: block;
+    top: 20px;
+  } 
+
+  .footer-main .accordion-wrapper .accordion {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .footer-main.footer-variant3 .accordion-wrapper .accordion,
+  .footer-main.healthcare-footerv3 .accordion-wrapper .accordion {
+            flex-flow: row wrap;
+                gap: 24px;
+                justify-content: center;
+  }
+
+  .footer .footer-bottom {
+    border: none;
+    padding-top: 0;
+  }
+
+.footer-bottom .default-content-wrapper {
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+}
+
+.footer-bottom .default-content-wrapper p {
+  color: var(--color-graphite, #2C343B);
+font-size: 12px;
+}
+
+.footer-bottom .default-content-wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* footer variant 3 */
+.footer-bottom.footer-variant3 .default-content-wrapper {
+gap: 16px;
+}
+
+.footer-variant3 .accordion details summary::after,
+.healthcare-footerv3 .accordion details summary::after {
+  display: none;
+}
+
+.footer-variant3 .accordion-wrapper .accordion details {
+  border: none;
+  width: 46%;
+}
+
+ .footer-variant3 .accordion-wrapper .accordion details summary{
+          padding: 0 0 16px;
+ }
+
+ .footer-variant3 .accordion-wrapper .accordion {
+   align-items: unset;
+ }
+}
+
+/* hi tech footer cariant 1 */
+.footer-wrapper:has(.hitech-footerv1) {
+  background: radial-gradient(143.64% 206.39% at 42.85% 27.05%, var(--color-black, #000000) 0%, var(--gray-900,#262626) 100%) !important;
+}
+
+.footer-main.hitech-footerv1 {
+  background: transparent;
+  gap: 138px;
+  padding: 0 50px;
+}
+
+.footer-bottom.hitech-footerv1 .default-content-wrapper p {
+  color: rgba(122, 99, 255, 0.10);
+  text-align: center;
+  font-family: var(--Space-Grotesk, sans-serif);
+  font-size: 317.45px;
+  font-weight: 400;
+  line-height: 400px;
+  letter-spacing: -15.872px;
+}
+
+.footer .footer-bottom.hitech-footerv1 {
+  border-top: none;
+  padding: 0px;
+}
+
+.footer-wrapper .footer>div:has(.hitech-footerv1) {
+  gap: 28px;
+  padding: 120px 23px 0 24px;
+}
+
+.footer-main.hitech-footerv1 .accordion-wrapper {
+  width: 48.3%;
+}
+
+.footer-main.hitech-footerv1 .accordion-wrapper .accordion details summary p {
+  color: var(--Lunar-Gray, #E6E8F1);
+  font-weight: 600;
+}
+
+.footer-main.hitech-footerv1 .accordion-wrapper .accordion a {
+  color: var(--color-soft-ash, #A5A4A4);
+}
+
+.footer-bottom.hitech-footerv1 .default-content-wrapper {
+  display: unset;
+}
+
+.footer-main.hitech-footerv1 .default-content-wrapper ul {
+  gap: 22px;
+}
+
+.footer-main.hitech-footerv1 .default-content-wrapper p:first-child {
+  color: var(--Lunar-Gray, #E6E8F1);
+  font-family: var(--Space-Grotesk, sans-serif);
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.hitech-footerv1 .accordion details summary::after,
+.hitech-footerv2 .accordion details summary::after,
+.hitech-footerv3 .accordion details summary::after,
+.healthcare-footerv1 .accordion details summary::after,
+.healthcare-footerv2 .accordion details summary::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.hitech-footerv1 .accordion details summary::after,
+.hitech-footerv3 .accordion details summary::after {
+  border-right: 2px solid var(--Lunar-Gray, #E6E8F1);
+  border-bottom: 2px solid var(--Lunar-Gray, #E6E8F1);
+}
+
+.footer-main.hitech-footerv1 .accordion details[open] summary::after,
+.footer-main.hitech-footerv2 .accordion details[open] summary::after,
+.footer-main.hitech-footerv3 .accordion details[open] summary::after,
+.footer-main.healthcare-footerv1 .accordion details[open] summary::after,
+.footer-main.healthcare-footerv2 .accordion details[open] summary::after {
+  transform: translateY(-50%) rotate(-135deg);
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  transition: transform 0.3s ease;
+}
+
+.footer-main.hitech-footerv1 .accordion details[open] summary::after,
+.footer-main.hitech-footerv3 .accordion details[open] summary::after {
+  border-right: 2px solid var(--Lunar-Gray, #E6E8F1);
+  border-bottom: 2px solid var(--Lunar-Gray, #E6E8F1);
+}
+
+.footer-main.hitech-footerv1 .accordion-wrapper .accordion details {
+  border: none;
+}
+
+.footer .footer-main ul li a img {
+  margin-bottom: 0px;
+}
+
+
+/* hi tech footer variant 2 */
+
+.footer-wrapper .footer>div:has(.hitech-footerv2) {
+  background: radial-gradient(180.6% 180.6% at 50% 22.3%, var(--Lunar-Gray, #E6E8F1) 31.89%, var(--Secondary, #7A63FF) 100%);
+}
+
+.hitech-footerv2 .accordion details summary::after {
+  border-right: 2px solid var(--Primary, #10172A);
+  border-bottom: 2px solid var(--Primary, #10172A);
+}
+
+.footer-main.hitech-footerv2 .accordion details[open] summary::after {
+  border-right: 2px solid var(--Primary, #10172A);
+  border-bottom: 2px solid var(--Primary, #10172A);
+}
+
+.footer .footer-main.hitech-footerv2 ul li a {
+  color: var(--color-slate-gray, #58595D);
+}
+
+.footer-main.hitech-footerv2 .accordion-wrapper .accordion details summary p {
+  color: var(--color-slate-gray, #58595D);
+}
+
+.footer-main.hitech-footerv2 .default-content-wrapper p:first-child {
+  color: var(--cosmic-black,#05060D);
+}
+
+.footer-bottom.hitech-footerv2 .default-content-wrapper p,
+.footer .footer-bottom.hitech-footerv2 ul li a {
+  color: var(--Primary, #10172A);
+}
+
+.footer .footer-bottom.hitech-footerv2 ul li a:before {
+  border: 0.2px solid var(--Primary, #10172A);
+}
+
+
+/* hi tech footer variant 3 */
+.footer-wrapper:has(.hitech-footerv3) {
+  background: radial-gradient(143.64% 206.39% at 42.85% 27.05%, var(--color-black, #000000) 0%, var(--color-midnight-indigo, #0E0737) 100%) !important;
+}
+
+.footer .footer-main.hitech-footerv3 ul li a {
+  color: var(--color-soft-ash, #A5A4A4);
+}
+
+.footer-main.hitech-footerv3 .accordion-wrapper .accordion details summary p {
+  color: var(--Lunar-Gray, #E6E8F1);
+}
+
+.footer-main.hitech-footerv3 .default-content-wrapper p:first-child {
+  color: var(--Lunar-Gray, #E6E8F1);
+}
+
+.footer-bottom.hitech-footerv3 .default-content-wrapper p {
+  color: var(--color-soft-ash, #A5A4A4);
+  width: 35%;
+}
+
+.footer-main.hitech-footerv3 .default-content-wrapper p {
+  color: var(--color-soft-ash, #A5A4A4);
+}
+
+.footer .footer-bottom.hitech-footerv3 ul li a:before {
+  border: 0.2px solid var(--Primary, #10172A);
+}
+
+.footer-bottom.hitech-footerv3 .default-content-wrapper h3 {
+  color: var(--Secondary, #7A63FF);
+  text-align: center;
+  font-family: var(--Space-Grotesk, sans-serif);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 48px;
+  margin: 0px;
+  width: 41%;
+}
+
+.footer-wrapper .footer>div:has(.hitech-footerv3) {
+  flex-direction: column-reverse;
+  padding: 80px 88px 80px;
+}
+
+.footer .footer-bottom.hitech-footerv3 {
+  border: none;
+  padding-top: 0px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-main.hitech-footerv1 .accordion-wrapper {
+    width: 100%;
+    padding: 39px 24px 0px;
+  }
+
+  .footer-wrapper .footer>div:has(.hitech-footerv1) {
+    padding: 0px;
+  }
+
+  .footer-main.hitech-footerv1 {
+    gap: 0px;
+  }
+
+  .footer-main.hitech-footerv1 .accordion-wrapper .accordion details summary,
+  .footer-main.hitech-footerv3 .accordion-wrapper .accordion details summary {
+    padding: 12px 0px;
+  }
+
+  .footer-main.hitech-footerv1 .accordion details[open] .accordion-item-body {
+    padding: 0px;
+  }
+
+  .footer-main.hitech-footerv1 .default-content-wrapper {
+    padding: 39px 24px 0px;
+  }
+
+  .footer-bottom.hitech-footerv1 .default-content-wrapper p {
+    text-align: center;
+    font-size: 87.078px;
+    line-height: 109.722px;
+    letter-spacing: -4.354px;
+  }
+
+  .footer-main.hitech-footerv1 {
+    padding: 0px;
+  }
+
+  /* footer variant 2 */
+  .footer .footer-bottom.hitech-footerv2,
+  .footer .footer-bottom.hitech-footerv3 {
+    display: none;
+  }
+
+  .footer-main.hitech-footerv2 .accordion-wrapper .accordion details:last-child,
+  .footer-main.hitech-footerv3 .accordion-wrapper .accordion details:last-child {
+    border: none;
+  }
+
+  /* footer variant 2 */
+  .footer-wrapper .footer>div:has(.hitech-footerv3) {
+    padding: 40px 24px;
+  }
+
+  .footer-bottom.hitech-footerv3 .default-content-wrapper p {
+    display: none;
+  }
+
+  .footer-bottom.hitech-footerv3 .default-content-wrapper h3 {
+    width: 100%;
+    font-size: 30px;
+  }
+
+  .footer-main.hitech-footerv3 .accordion-wrapper .accordion details {
+    border: none;
+  }
+}
+
+/* healthcare footer variant 1 */
+.footer-wrapper:has(.healthcare-footerv1),
+.footer-wrapper:has(.healthcare-footerv2),
+.footer-wrapper:has(.healthcare-footerv3) {
+  background: var(--pure-white, #ffffff) !important;
+}
+
+.healthcare-footerv1.footer-main .default-content-wrapper p:first-child .icon,
+.healthcare-footerv2.footer-main .default-content-wrapper p:first-child .icon {
+  width: 36px;
+  height: 36px;
+}
+
+.healthcare-footerv1.footer-main .default-content-wrapper p:first-child,
+.healthcare-footerv2.footer-main .default-content-wrapper p:first-child,
+.healthcare-footerv3.footer-main .default-content-wrapper p:first-child {
+  color: var(--midnight-blue, #0F1B2D);
+  font-family: var(--Manrope, sans-serif);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.healthcare-footerv1 .default-content-wrapper p:last-child,
+.healthcare-footerv2 .default-content-wrapper p:last-child,
+.healthcare-footerv3 .default-content-wrapper p:last-child {
+  color: var(--medium-gray, #626262);
+  font-family: var(--Manrope, sans-serif);
+  line-height: 22px;
+}
+
+.healthcare-footerv1 .accordion-wrapper .accordion details summary p,
+.healthcare-footerv2.footer-main .accordion-wrapper .accordion details summary p,
+.healthcare-footerv3 .accordion-wrapper .accordion details summary p {
+  color: var(--midnight-blue, #0F1B2D);
+  font-family: var(--Manrope, sans-serif);
+  opacity: 1;
+}
+
+.healthcare-footerv1 .accordion-wrapper .accordion a,
+.healthcare-footerv2 .accordion-wrapper .accordion a,
+.healthcare-footerv3 .accordion-wrapper .accordion a {
+  color: var(--medium-gray, #626262);
+  font-family: var(--Manrope, sans-serif);
+  font-weight: 500;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.healthcare-footerv1 .default-content-wrapper p,
+.healthcare-footerv2 .default-content-wrapper p,
+.healthcare-footerv3 .default-content-wrapper p {
+  opacity: 1;
+}
+
+.footer .healthcare-footerv1 ul li a::before,
+.footer .healthcare-footerv2 ul li a::before,
+.footer .healthcare-footerv3 ul li a::before {
+  display: none;
+}
+
+.footer-bottom.healthcare-footerv1 a,
+.footer-bottom.healthcare-footerv2 a,
+.footer-bottom.healthcare-footerv3 a {
+  opacity: 1;
+  color: var(--medium-gray, #626262);
+  font-family: var(--Manrope, sans-serif);
+  font-weight: 500;
+}
+
+footer .footer .healthcare-footerv1 img,
+footer .footer .healthcare-footerv2 img,
+footer .footer .healthcare-footerv3 img {
+  margin: 0px;
+}
+
+.footer-bottom.healthcare-footerv1 ul,
+.footer-bottom.healthcare-footerv2 ul,
+.footer-bottom.healthcare-footerv3 ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer .footer-bottom.healthcare-footerv1,
+.footer .footer-bottom.healthcare-footerv2,
+.footer .footer-bottom.healthcare-footerv3 {
+  border-top: 0.5px solid var(--Ice-Blue, #A4DDF8);
+  padding-top: 40px;
+}
+
+.footer-bottom.healthcare-footerv1 .default-content-wrapper p,
+.footer-bottom.healthcare-footerv2 .default-content-wrapper p,
+.footer-bottom.healthcare-footerv3 .default-content-wrapper p {
+  color: var(--midnight-blue, #0F1B2D);
+  font-family: var(--Manrope, sans-serif);
+}
+
+.footer-bottom.healthcare-footerv1 a .icon,
+.footer-bottom.healthcare-footerv2 a .icon,
+.footer-bottom.healthcare-footerv3 a .icon {
+  margin: 4px;
+}
+
+.footer-main.healthcare-footerv3 .accordion-wrapper {
+  width: 100%;
+}
+footer .footer .footer-main.healthcare-footerv1 .accordion-item-body .icon,
+footer .footer .footer-main.healthcare-footerv2 .accordion-item-body .icon,
+footer .footer .footer-main.healthcare-footerv3 .accordion-item-body .icon {
+height: 16px;
+    width: 16px;
+}
+footer .footer .footer-main.healthcare-footerv1 .accordion-item-body img,
+footer .footer .footer-main.healthcare-footerv2 .accordion-item-body img,
+footer .footer .footer-main.healthcare-footerv3 .accordion-item-body img {
+    height: 16px;
+    width: 16px;
+}
+@media screen and (max-width: 1024px) {
+
+  .footer-main.healthcare-footerv1 .accordion-wrapper .accordion details,
+  .footer-main.healthcare-footerv2 .accordion-wrapper .accordion details,
+  .footer-main.healthcare-footerv3 .accordion-wrapper .accordion details {
+    border: none;
+  }
+
+  .healthcare-footerv1 .accordion details summary::after,
+  .healthcare-footerv2 .accordion details summary::after {
+    border-right: 2px solid var(--midnight-blue, #0F1B2D);
+    border-bottom: 2px solid var(--midnight-blue, #0F1B2D);
+  }
+
+  .footer-main.healthcare-footerv1 .accordion details[open] summary::after,
+  .footer-main.healthcare-footerv2 .accordion details[open] summary::after {
+    border-right: 2px solid var(--midnight-blue, #0F1B2D);
+    border-bottom: 2px solid var(--midnight-blue, #0F1B2D);
+  }
+
+  .healthcare-footerv1.footer-main .default-content-wrapper p:first-child,
+  .healthcare-footerv2.footer-main .default-content-wrapper p:first-child,
+  .healthcare-footerv3.footer-main .default-content-wrapper p:first-child {
+    font-size: 24px;
+    gap: 4px;
+  }
+
+  .healthcare-footerv1.footer-main .default-content-wrapper p:first-child .icon,
+  .healthcare-footerv2.footer-main .default-content-wrapper p:first-child .icon,
+  .healthcare-footerv3.footer-main .default-content-wrapper p:first-child .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .footer-main.healthcare-footerv1,
+  .footer-main.healthcare-footerv2,
+  .footer-main.healthcare-footerv3 {
+    gap: 32px;
+  }
+
+  .footer-main.healthcare-footerv1 .default-content-wrapper,
+  .footer-main.healthcare-footerv2 .default-content-wrapper,
+  .footer-main.healthcare-footerv3 .default-content-wrapper {
+    gap: 16px;
+  }
+
+  .footer-main.healthcare-footerv1 .accordion-wrapper .accordion details summary,
+  .footer-main.healthcare-footerv2 .accordion-wrapper .accordion details summary,
+  .footer-main.healthcare-footerv3 .accordion-wrapper .accordion details summary {
+    padding: 16px 0px;
+  }
+
+  .healthcare-footerv1 .accordion-wrapper .accordion details summary p,
+  .healthcare-footerv2 .accordion-wrapper .accordion details summary p,
+  .healthcare-footerv3 .accordion-wrapper .accordion details summary p {
+    font-weight: 500;
+  }
+
+  .footer .footer-bottom.healthcare-footerv1,
+  .footer .footer-bottom.healthcare-footerv2,
+  .footer .footer-bottom.healthcare-footerv3 {
+    padding-top: 24px;
+  }
+
+  .footer-bottom.healthcare-footerv1 .default-content-wrapper,
+  .footer-bottom.healthcare-footerv2 .default-content-wrapper,
+  .footer-bottom.healthcare-footerv3 .default-content-wrapper {
+    gap: 12px;
+  }
+
+  .footer-main.healthcare-footerv3 .accordion-wrapper .accordion {
+    justify-content: unset;
+  }
+
+  .healthcare-footerv3 .accordion-wrapper .accordion details {
+    border: none;
+    width: 28%;
+  }
+
+  .healthcare-footerv3 .accordion-wrapper .accordion details summary {
+    pointer-events: none;
   }
 }

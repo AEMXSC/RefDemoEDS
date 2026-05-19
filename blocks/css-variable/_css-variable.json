@@ -1,0 +1,42 @@
+{
+  "definitions": [
+    {
+      "title": "CSS Variable",
+      "id": "css-variable",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "CSS Variable",
+              "model": "css-variable"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "css-variable",
+      "fields": [
+        {
+          "component": "text",
+          "name": "csskey",
+          "label": "CSS Variable Key",
+          "description": "Enter the CSS variable name (e.g., primary-color, font-family)",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "cssvalue",
+          "label": "CSS Variable Value",
+          "description": "Enter the CSS value (e.g., #007bff, Arial, 1.5rem)",
+          "valueType": "string",
+          "required": true
+        }
+      ]
+    }
+  ]
+}

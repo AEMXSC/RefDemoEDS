@@ -1,0 +1,15 @@
+/* stylelint-disable no-descending-specificity */
+.dynamic-media {
+    display: grid;
+    grid-template-areas: "teaser";
+    align-items: end;
+    justify-items: center;
+}
+
+.dynamic-media > div {
+    grid-area: teaser;
+    width: 100%;
+}
+.dynamicmedia-image-wrapper{
+    text-align:center;
+}
