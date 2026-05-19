@@ -500,7 +500,10 @@ async function loadEager(doc) {
   // await loadThemeConfiguration();
 
   // Load theme from page (theme-configurator-root)
-  await loadThemeFromPage();
+  const themeConfigCFPath = getMetadata('theme_cf_reference');
+  if (!themeConfigCFPath) {
+    await loadThemeFromPage();
+  }
 
   // Preconnect dynamically to speed up LCP fetch without hardcoding hosts
   try {
