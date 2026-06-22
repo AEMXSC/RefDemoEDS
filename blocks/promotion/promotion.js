@@ -298,7 +298,7 @@ async function renderCard(block, cfItem, isAuthor, source = 'default', displaySt
   log(`Rendering card [${source}]:`, cfItem?.title, { displayStyle, alignment });
 
   const imgUrl = isAuthor
-    ? (cfItem.bannerimage?._authorUrl || cfItem.bannerimage?._publishUrl)
+    ? (cfItem.bannerimage?._path || cfItem.bannerimage?._authorUrl)
     : (cfItem.bannerimage?._publishUrl || cfItem.bannerimage?._authorUrl);
 
   let ctaHref = '#';
